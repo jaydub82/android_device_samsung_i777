@@ -107,10 +107,11 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_VOLD_MAX_PARTITIONS := 12
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/s3c-usbgadget/gadget/lun%d/file"
 
 # Recovery
 BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/galaxys2/recovery/graphics.c
-BOARD_UMS_LUNFILE := "/sys/class/android_usb/f_mass_storage/lun0/file"
+BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
@@ -124,7 +125,7 @@ BOARD_USES_MFC_FPS := true
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/galaxys2/overlay/include
 
 # assert
-TARGET_OTA_ASSERT_DEVICE := i777,galaxys2att,SGH-I777,galaxys2
+TARGET_OTA_ASSERT_DEVICE := i777,galaxys2att,SGH-I777
 
 # Use the non-open-source parts, if they're present
 -include vendor/samsung/i777/BoardConfigVendor.mk
